@@ -1,0 +1,17 @@
+nav{
+    display: flex;
+    background-color: aqua;
+    width: 100%;
+}
+button{
+    width: 90px;
+    height: 40px;
+    margin-left: 80px;
+    margin-top: 10px;
+    border-radius: 52%;
+}
+h1{
+    margin-left: 60px;
+    font-size: 20px;
+    color: black;
+}
