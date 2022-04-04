@@ -3,7 +3,7 @@ nav{
     background-color: aqua;
     width: 100%;
 }
-button{
+nav button{
     width: 90px;
     height: 40px;
     margin-left: 80px;
