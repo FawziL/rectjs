@@ -1,12 +1,15 @@
 import './ItemCount.css'
 import {useState} from 'react'
 
-const ItemCount = ({stock, onAdd}) =>{
+const ItemCount = ({initial, stock, onAdd}) =>{
 
     const [count, setCount] = useState(0)
 
     const restar = () =>{
-        setCount(count - 1)
+        if(count > initial ){
+            setCount(count - 1)
+        }
+        
     }
     const sumar = () =>{
         if (count < stock ){

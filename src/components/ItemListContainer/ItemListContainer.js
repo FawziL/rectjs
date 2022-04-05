@@ -10,7 +10,7 @@ const ItemListContainer = (props) =>{
     return(
         <div>
         <h1 className="ContenedorH1">{props.greeting}</h1>
-        <ItemCount stock={10} onAdd={handleOnAdd}/>
+        <ItemCount initial={1} stock={10} onAdd={handleOnAdd}/>
         </div>
         
       
