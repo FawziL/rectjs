@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import { getProductosById } from '../../stock'
 import ItemDetail from '../ItemDetail/ItemDetail'
+import { useParams } from 'react-router-dom'
 
 import './ItemDetailContainer.css'
 
@@ -11,9 +12,10 @@ const ItemDetailContainer = () =>{
     const [product, setProduct] = useState()
     const [loading, setLoading] = useState(true)
 
+const { productId } = useParams()
 
     useEffect(() => {
-        getProductosById('1').then(item => {
+        getProductosById(productId).then(item => {
             setProduct(item)          
         }).catch(err  => {
             console.log(err)
@@ -25,7 +27,7 @@ const ItemDetailContainer = () =>{
             setProduct()
         })
 
-    }, [])
+    }, [productId])
 
     
     return(

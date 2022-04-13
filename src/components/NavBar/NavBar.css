@@ -15,3 +15,25 @@ h1{
     font-size: 20px;
     color: black;
 }
+.navVerde{
+    width: 90px;
+    height: 40px;
+    margin-left: 80px;
+    margin-top: 10px;
+    border-radius: 52%;
+    border-style: solid;
+    background-color: green;
+    text-decoration: none;
+    color: black
+}
+.navRojo{
+    width: 90px;
+    height: 40px;
+    margin-left: 80px;
+    margin-top: 10px;
+    border-radius: 52%;
+    border-style: solid;
+    background-color: red;
+    text-decoration: none;
+    color: black
+}

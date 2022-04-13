@@ -3,16 +3,27 @@ import ItemCount from '../ItemCount/ItemCount'
 import { useState, useEffect } from 'react'
 import { getProductos } from '../../stock' 
 import ItemList from '../ItemList/ItemList'
+import { useParams } from 'react-router-dom'
+
+
+
+
+
+
+
+
 
 const ItemListContainer = (props) =>{
 
     const [productos, setProductos] = useState([])
+    
+    const { categoryId } = useParams()
 
     useEffect(()=>{
-        getProductos().then(produc=>{
+        getProductos(categoryId).then(produc=>{
             setProductos(produc)
         })
-    }, [])
+    }, [categoryId])
 
 
     const handleOnAdd = (quantify) =>{
