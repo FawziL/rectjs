@@ -16,9 +16,8 @@ const NavBar = () => {
 
     return(
         <nav>
-            <h1>Tutiendaonline</h1>
-            <NavLink to='/' className={({isActive})=> isActive ? 'navRojo' : 'navVerde'}>List</NavLink>
-            <NavLink to='/detail' className={({isActive})=> isActive ? 'navRojo' : 'navVerde'}>Detail</NavLink>
+            
+            <NavLink to='/' className="logo"><h1>Tutiendaonline</h1></NavLink>
             { categories.map(cat=> <NavLink key={cat.id} to={`/category/${cat.id}`}
             className={({isActive})=> isActive ? 'navRojo' : 'navVerde'}
             >{cat.description}</NavLink>)}

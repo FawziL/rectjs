@@ -34,14 +34,14 @@ const { productId } = useParams()
         <div className='DetailsProductos'>
            { 
             loading ? 
-                <h1>Cargando...</h1> :
+            <img src="https://cdn.dribbble.com/users/108183/screenshots/14420202/media/0398828bd84d67fad129e64e8a79f77c.gif" className="loadImg" alt="cargando"/> :
             product ? 
                 <ItemDetail  {...product} /> :
                 <h1>El producto no existe</h1> 
             }
         </div>
         
-      
+        
     )
 }
 export default ItemDetailContainer

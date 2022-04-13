@@ -10,30 +10,32 @@ nav button{
     margin-top: 10px;
     border-radius: 52%;
 }
-h1{
+.logo{
     margin-left: 60px;
-    font-size: 20px;
+    font-size: 16px;
     color: black;
+    text-decoration: none;
 }
 .navVerde{
-    width: 90px;
-    height: 40px;
+
     margin-left: 80px;
     margin-top: 10px;
-    border-radius: 52%;
+    margin-bottom: 10px;
+    border-radius: 50%;
     border-style: solid;
     background-color: green;
     text-decoration: none;
-    color: black
+    color: black;
+    padding: 8px;
 }
 .navRojo{
-    width: 90px;
-    height: 40px;
     margin-left: 80px;
     margin-top: 10px;
-    border-radius: 52%;
+    margin-bottom: 10px;
+    border-radius: 50%;
     border-style: solid;
-    background-color: red;
+    background-color: rgb(204, 71, 71);
     text-decoration: none;
-    color: black
+    color: black;
+    padding: 8px;
 }
