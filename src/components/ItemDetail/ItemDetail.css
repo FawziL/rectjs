@@ -4,6 +4,7 @@
     background-color: rgb(118, 190, 214);
     padding: 5px;
     color: black;
+    justify-content: space-evenly;
 }
 .imgProductDetail{
     width: 250px;
@@ -14,4 +15,7 @@
     font-size: 18px;
     padding: 5px;
     font-family: sans-serif;
+    background-color: rgb(178, 210, 210);
+    border-radius: 5%;
+
 }
