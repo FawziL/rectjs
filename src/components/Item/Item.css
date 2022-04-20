@@ -21,13 +21,19 @@
     color: black;
     background-color: rgb(215, 250, 245);
     padding: 3px;
+    margin: 10px;
 
 }
 h3{
     font-size: 20px;
+    margin: 10px
+
 }
 .precio{
     font-size: 20px;
     margin-top: 0px;
     margin-bottom: 5px;
+}
+.margin{
+    margin: 10px;
 }

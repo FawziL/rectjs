@@ -4,21 +4,23 @@ import Navbar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { CardContextProvider } from './Context/CardContext';
 
 function App() {
   
   return (
     <div className="App">
-
-      <BrowserRouter>
-        <Navbar/>
-          <Routes>
-            <Route path='/' element={<ItemListContainer greeting={'Hola, este es el espacio para productos'}/>}/>
-            <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
-            <Route path='/detail/:productId' element={<ItemDetailContainer/>}/>
-            <Route path='*' element={<h1>NOT FOUND</h1>}/>
-          </Routes>
-      </BrowserRouter>
+    <CardContextProvider>
+        <BrowserRouter>
+          <Navbar/>
+            <Routes>
+              <Route path='/' element={<ItemListContainer greeting={'Hola, este es el espacio para productos'}/>}/>
+              <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
+              <Route path='/detail/:productId' element={<ItemDetailContainer/>}/>
+              <Route path='*' element={<h1>NOT FOUND</h1>}/>
+            </Routes>
+        </BrowserRouter>
+      </CardContextProvider>
 
       <header className="App-header">
         
