@@ -2,39 +2,30 @@ nav{
     display: flex;
     background-color: aqua;
     width: 100%;
+    justify-content: space-evenly;
 }
-nav button{
-    width: 90px;
-    height: 40px;
-    margin-left: 80px;
-    margin-top: 10px;
-    border-radius: 52%;
-}
+
 .logo{
-    margin-left: 60px;
     font-size: 16px;
     color: black;
     text-decoration: none;
 }
 .navVerde{
-
-    margin-left: 80px;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 50%;
     border-style: solid;
-    background-color: green;
+    background-color: rgb(22, 223, 22);
     text-decoration: none;
     color: black;
     padding: 8px;
 }
 .navRojo{
-    margin-left: 80px;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 50%;
     border-style: solid;
-    background-color: rgb(204, 71, 71);
+    background-color: rgb(233, 26, 26);
     text-decoration: none;
     color: black;
     padding: 8px;

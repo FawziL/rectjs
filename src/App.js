@@ -4,23 +4,25 @@ import Navbar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import { CardContextProvider } from './Context/CardContext';
+import { CartContextProvider } from './Context/CartContext';
+import Cart from './components/Cart/Cart';
 
 function App() {
   
   return (
     <div className="App">
-    <CardContextProvider>
+    <CartContextProvider>
         <BrowserRouter>
           <Navbar/>
             <Routes>
               <Route path='/' element={<ItemListContainer greeting={'Hola, este es el espacio para productos'}/>}/>
               <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
               <Route path='/detail/:productId' element={<ItemDetailContainer/>}/>
+              <Route path='/cart' element={<Cart />} />
               <Route path='*' element={<h1>NOT FOUND</h1>}/>
             </Routes>
         </BrowserRouter>
-      </CardContextProvider>
+      </CartContextProvider>
 
       <header className="App-header">
         

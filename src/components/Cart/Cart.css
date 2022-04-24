@@ -1,0 +1,30 @@
+.productosCarrito{
+    margin: 10px;
+    border-style: solid;
+    border-radius: 5px;
+    color: black;
+    background-color: aquamarine;
+    padding: 10px;
+}
+.botonEliminarProducto{
+    background-color: white;
+    border-radius: 5px;
+
+}
+.titulo{
+font-size: 20px;
+margin: 0px;
+font-weight: 500;
+}
+
+.Link{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    border-style: solid;
+    padding: 10px;
+    margin: 15px;
+    background-color: aquamarine;
+    width: 500px;
+    border-radius: 10px;
+}
