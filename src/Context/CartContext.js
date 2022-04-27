@@ -29,10 +29,17 @@ import { createContext, useState } from "react";
         })
         return count
     }
+    const getTotal = () =>{
+        let count = 0
+        cart.forEach(prod=>{
+            count += prod.quantity * prod.price
+        })
+        return count
+    }
 
 
     return(
-        <CartContext.Provider value={{cart, addItem, getQuantity, removeItem, clearCart, isInCart}}>
+        <CartContext.Provider value={{cart, addItem, getQuantity, removeItem, clearCart, isInCart, getTotal}}>
             {children}
         </CartContext.Provider>
     )

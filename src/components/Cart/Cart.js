@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Cart = () => {
 
-    const { cart, removeItem } = useContext(CartContext)
+    const { cart, removeItem, clearCart, getTotal } = useContext(CartContext)
     
     if(cart.length === 0) {
         return (
@@ -27,6 +27,8 @@ const Cart = () => {
             <div><button className='botonEliminarProducto' onClick={() => removeItem(prod.id)}>Quitar producto</button></div>
              </div>)}   
         </div>
+        <p>El monto total es de: {getTotal()}$</p>
+        <button onClick={clearCart} className='botonEliminarProducto'>Vaciar carrito</button>
         </div>
     )
 }

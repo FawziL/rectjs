@@ -1,8 +1,9 @@
 import './ItemListContainer.css'
 import { useState, useEffect } from 'react'
-import { getProductos } from '../../stock' 
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
+import { collection, getDocs, query, where } from 'firebase/firestore'
+import { firestoreDb } from '../../services/firebase'
 
 
 
@@ -14,20 +15,21 @@ import { useParams } from 'react-router-dom'
 
 const ItemListContainer = (props) =>{
 
-    
     const [productos, setProductos] = useState([])
-    const [loading, setLoading] = useState(true)
     const { categoryId } = useParams()
 
     useEffect(()=>{
-        getProductos(categoryId).then(produc=>{
-            setProductos(produc)
-        }).catch(error => {
-            console.log(error)
+
+        const collectionRef = categoryId
+        ? query(collection(firestoreDb, 'products'), where('category', '==', categoryId))
+        : collection(firestoreDb, 'products')
+
+        getDocs(collectionRef).then(response =>{
+            const products = response.docs.map(doc=> {
+                return {id: doc.id, ...doc.data()}
+            })
+            setProductos(products)
         })
-        .finally(() => {
-          setLoading(false)
-      })
     }, [categoryId])
 
 
@@ -36,9 +38,7 @@ const ItemListContainer = (props) =>{
     return(
         <div className='ContenedorProductos'>
 
-        { loading ? 
-                <img src="https://cdn.dribbble.com/users/108183/screenshots/14420202/media/0398828bd84d67fad129e64e8a79f77c.gif" className="loadImg" alt="cargando"/> 
-                :
+        { 
                 <div>
                     <h1>{props.greeting}</h1>
                     <ItemList productos={productos}/>
