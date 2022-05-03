@@ -9,24 +9,89 @@ nav{
     font-size: 16px;
     color: black;
     text-decoration: none;
+    margin: 0px;
 }
 .navVerde{
+    border-radius: 15px;
+    border-style: solid;
+    background-color: rgb(22, 223, 22);
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+    width: 114.5px;
+}
+.navRojo{
+    border-radius: 15px;
+    border-style: solid;
+    background-color: rgb(233, 26, 26);
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+    width: 114.5px;
+}
+.navRojoDos{
     margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 50%;
+    border-radius: 15px;
+    border-style: solid;
+    background-color: rgb(233, 26, 26);
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+
+}
+.navVerdeDos{
+    margin-top: 10px;
+    border-radius: 15px;
     border-style: solid;
     background-color: rgb(22, 223, 22);
     text-decoration: none;
     color: black;
     padding: 8px;
 }
-.navRojo{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 50%;
-    border-style: solid;
-    background-color: rgb(233, 26, 26);
-    text-decoration: none;
-    color: black;
-    padding: 8px;
+
+
+
+.componentes-NavBar {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+li a{
+    display: block;
 }
+  
+.componentes-NavBar li:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+  
+.menu-vertical {
+    position: absolute;
+    display: none;
+    list-style: none;
+    padding: 10px 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .componentes-NavBar li:hover .menu-vertical {
+    display: block;
+  }
+  
+  .menu-vertical a:hover {
+    background-color: rgb(23, 23, 118) ;
+    color: white;
+  }
+  .menu-vertical li a {
+    display: block;
+    color: white;
+    padding: 15px, 15px, 85px, 20px;
+    text-decoration: none;
+  }
+  .menu-vertical li {
+    color: white;
+  }
+  
+  .elements-NavBar {
+    color: white;
+    text-decoration: none;
+  }
+  

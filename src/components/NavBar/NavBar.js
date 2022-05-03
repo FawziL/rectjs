@@ -19,14 +19,35 @@ const NavBar = () => {
     }, [])
 
     return(
-        <nav>
-            
+    
+        <nav className="NavBar">
+
             <NavLink to='/' className="logo"><h1>Tutiendaonline</h1></NavLink>
-            { categories.map(cat=> <NavLink key={cat.id} to={`/category/${cat.id}`}
-            className={({isActive})=> isActive ? 'navRojo' : 'navVerde'}
-            >{cat.description}</NavLink>)}
-            <CartWidget/>
+
+            <ul className="componentes-NavBar">
+                <li id="elements-NavBar">
+                    <NavLink to="/" className={({ isActive }) => (isActive ? 'navRojo' : 'navVerde')}>Categorías</NavLink>
+
+                    <ul className="menu-vertical">
+                    {categories.map((cat) => (
+                    <NavLink
+                        key={cat.id}
+                        to={`/category/${cat.id}`}
+                        className={({ isActive }) =>
+                            isActive ? 'navRojoDos' : 'navVerdeDos'}>
+                        {cat.description}
+                    </NavLink>
+                    ))}
+                    </ul>
+                </li>
+                
+            </ul>
+            <CartWidget />
         </nav>
+
+
+
+
     )
 }
 

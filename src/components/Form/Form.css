@@ -1,0 +1,21 @@
+.form{
+    border-style: solid;
+    width: 400px;
+    margin: 10px 250px 10px 540px;
+}
+
+
+.formInput{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    background-color: rgb(164, 240, 240);
+
+}
+input{
+    margin: 10px;
+    border-radius: 15px;
+    background-color: aquamarine;
+    height: 20px;
+    margin-top: 15px;
+}

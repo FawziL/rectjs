@@ -13,31 +13,28 @@ const ItemDetailContainer = () =>{
     const { productId } = useParams()
 
     useEffect(() => {
+        setLoading(true)
         getDoc(doc(firestoreDb, 'products', productId)).then(response =>{
             const product = {id: response.id, ...response.data()}
             setProduct(product)
         })
-        setProduct()
-
-        return (() => {
-            setProduct()
+        .finally(() => {
+            setLoading(false)
         })
 
     }, [productId])
 
-    
-    return(
-        <div className='DetailsProductos'>
-           { 
-            loading ? 
+    if(loading) {
+        return(
             <img src="https://cdn.dribbble.com/users/108183/screenshots/14420202/media/0398828bd84d67fad129e64e8a79f77c.gif" className="loadImg" alt="cargando"/> 
-            :
-            product ? 
-                <ItemDetail  {...product} /> :
-                <h1>Cargando...</h1> 
-            }
+        )
+    }
+
+    return(
+
+        <div className='DetailsProductos'>
+            <ItemDetail  {...product} /> 
         </div>
-        
         
     )
 }
