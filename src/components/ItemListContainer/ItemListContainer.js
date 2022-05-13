@@ -13,7 +13,7 @@ import { firestoreDb } from '../../services/firebase'
 
 
 
-const ItemListContainer = (props) =>{
+const ItemListContainer = () =>{
 
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(false)
@@ -33,6 +33,7 @@ const ItemListContainer = (props) =>{
         }).finally(() => {
             setLoading(false)
         })
+        
     }, [categoryId])
 
     if(loading) {
@@ -46,14 +47,11 @@ const ItemListContainer = (props) =>{
     return(
         <div className='ContenedorProductos'>
 
-        { 
-                <div>
-                    <h1 className='noMargin'>{props.greeting}</h1>
-                    <ItemList productos={productos}/>
-                </div>
-                
-           }
-        
+            <div className='flex'>  
+                <h1>Revisa nuestra selección de productos!</h1>
+            </div>
+            <ItemList productos={productos}/>
+ 
         </div>
         
       

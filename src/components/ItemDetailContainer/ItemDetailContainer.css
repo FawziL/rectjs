@@ -1,10 +1,18 @@
 .DetailsProductos{
-    background-color: rgb(56, 196, 196);
+    background-color: rgb(98, 253, 253);
     border-style: solid;
     color: black;
     text-align: center;
+    border-radius: 10px;
+
 }
 .loadImg{
     width: 500px;
     height: 500px;
+}
+.tamaño{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 120px;
+   
 }

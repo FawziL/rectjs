@@ -32,8 +32,18 @@ const ItemDetailContainer = () =>{
 
     return(
 
-        <div className='DetailsProductos'>
-            <ItemDetail  {...product} /> 
+        <div>
+            <div className='flex'>  
+                <h1>Tenemos gran variedad de productos!</h1>
+            </div>
+            
+                <div className='tamaño'>
+                    <div className='DetailsProductos'>
+                        <ItemDetail  {...product} /> 
+                    </div>
+                </div>
+            
+            
         </div>
         
     )

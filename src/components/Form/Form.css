@@ -2,6 +2,7 @@
     border-style: solid;
     width: 400px;
     margin: 10px 250px 10px 540px;
+    color: black;
 }
 
 
@@ -18,4 +19,14 @@ input{
     background-color: aquamarine;
     height: 20px;
     margin-top: 15px;
+}
+#confirmacion{
+    position: absolute;
+    right: 0;
+    border-style: solid;
+    background-color: aquamarine;
+    border-radius: 10px;
+    color: black;
+    max-height: 100px;
+    max-width: 200px;
 }

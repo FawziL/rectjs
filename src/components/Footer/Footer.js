@@ -23,9 +23,7 @@ const Footer = () =>{
                 </svg>  
             </div>
         </div>
-   
-
-    <hr/>
+   <hr/>
     <p>Mipaginadeventas © 2021-2021 *  Desarrollado por Lutfallah F</p>
 </footer>
        

@@ -1,5 +1,6 @@
 import './App.css';
 import Navbar from './components/NavBar/NavBar';
+import Home from './components/Home/Home';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
@@ -8,16 +9,18 @@ import Cart from './components/Cart/Cart';
 import Footer from './components/Footer/Footer';
 import Form from './components/Form/Form';
 
+
 function App() {
   
   return (
-    <div className="App">
+    <div className="App imagenFondo">
     <CartContextProvider>
         <BrowserRouter>
           <Navbar/>
             <Routes>
-              <Route path='/' element={<ItemListContainer greeting={'Hola, este es el espacio para productos'}/>}/>
-              <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/productos' element={<ItemListContainer/>}/>
+              <Route path='/productos/:categoryId' element={<ItemListContainer/>}/>
               <Route path='/detail/:productId' element={<ItemDetailContainer/>}/>
               <Route path='/cart' element={<Cart />} />
               <Route path='/checkout' element={<Form/>}/>

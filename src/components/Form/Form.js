@@ -18,7 +18,7 @@ const Form = () =>{
         let nombre = document.getElementById('nombre').value;
         let email = document.getElementById('email').value;
         let phone = document.getElementById('phone').value;
-        console.log(nombre, email, phone)
+        let confirmacion = document.getElementById('confirmacion');
         const objOrder = {
             items: cart,
             buyer: {
@@ -35,9 +35,13 @@ const Form = () =>{
         const batch = writeBatch(firestoreDb)
 
         const collectionRef = collection(firestoreDb, 'products')
-
+        
         const outOfStock = []
-
+        if (nombre == "" || email == "" || phone == ""){
+            confirmacion.innerText = "Por favor, completa el formulario de datos"
+        } else if(cart.length === 0){
+            confirmacion.innerText = "Tu carrito esta vacío. Por favor, agrega productos antes de intentar pagar"
+        } else{ 
         getDocs(query(collectionRef, where(documentId(), 'in', ids)))
             .then(response => {
                 response.docs.forEach(doc => {
@@ -59,18 +63,20 @@ const Form = () =>{
                 }
             }).then(({ id }) => {
                 batch.commit()
-                console.log(`El id de la orden es ${id}`)
+                confirmacion.innerText=(`Su orden ha sido procesada! El id de su orden es "${id}"`)
             }).catch(error => {
                 console.log(error)
-            })
+            })}
     }
 
 
     return(
         <div className='ContenedorProductos'>
-
-            <h1 className='noMargin'>Coloca tus datos de contacto y pago</h1>
-        
+            <div className='flex'>  
+                <h1>Coloca tus datos de contacto y pago</h1>
+                <div id='confirmacion'></div>
+            </div>
+          
                 <div>
                     
                     <div className='form'>
@@ -90,7 +96,7 @@ const Form = () =>{
                     
                     
                      
-                    <button onClick={() => createOrder()} className='botonEliminarProducto'>Generar Orden</button>
+                    <button onClick={() => createOrder()} className='botonComprar'>Generar Orden</button>
                 </div>
                 
         </div>

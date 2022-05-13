@@ -22,17 +22,18 @@ const NavBar = () => {
     
         <nav className="NavBar">
 
-            <NavLink to='/' className="logo"><h1>Tutiendaonline</h1></NavLink>
-
+           
+            <NavLink to='/' className="NavLink" ><p className="logo">Tutiendaonline</p></NavLink>
+            
             <ul className="componentes-NavBar">
                 <li id="elements-NavBar">
-                    <NavLink to="/" className={({ isActive }) => (isActive ? 'navRojo' : 'navVerde')}>Categorías</NavLink>
+                    <NavLink to="/productos" className={({ isActive }) => (isActive ? 'navRojo' : 'navVerde')}>Productos</NavLink>
 
                     <ul className="menu-vertical">
                     {categories.map((cat) => (
                     <NavLink
                         key={cat.id}
-                        to={`/category/${cat.id}`}
+                        to={`/productos/${cat.id}`}
                         className={({ isActive }) =>
                             isActive ? 'navRojoDos' : 'navVerdeDos'}>
                         {cat.description}
@@ -40,14 +41,16 @@ const NavBar = () => {
                     ))}
                     </ul>
                 </li>
-                
             </ul>
-            <CartWidget />
+            
+           <div className='cartWidget'>
+           <CartWidget />
+           </div>
+           
+           
+            
+            
         </nav>
-
-
-
-
     )
 }
 
