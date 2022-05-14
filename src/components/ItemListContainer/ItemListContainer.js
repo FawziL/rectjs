@@ -1,30 +1,58 @@
 import './ItemListContainer.css'
-import ItemCount from '../ItemCount/ItemCount'
 import { useState, useEffect } from 'react'
-import { getProductos } from '../../stock' 
 import ItemList from '../ItemList/ItemList'
+import { useParams } from 'react-router-dom'
+import { collection, getDocs, query, where } from 'firebase/firestore'
+import { firestoreDb } from '../../services/firebase'
 
-const ItemListContainer = (props) =>{
+
+
+
+
+
+
+
+
+const ItemListContainer = () =>{
 
     const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(false)
+    const { categoryId } = useParams()
 
     useEffect(()=>{
-        getProductos().then(produc=>{
-            setProductos(produc)
+        setLoading(true)
+        const collectionRef = categoryId
+        ? query(collection(firestoreDb, 'products'), where('category', '==', categoryId))
+        : collection(firestoreDb, 'products')
+
+        getDocs(collectionRef).then(response =>{
+            const products = response.docs.map(doc=> {
+                return {id: doc.id, ...doc.data()}
+            })
+            setProductos(products)
+        }).finally(() => {
+            setLoading(false)
         })
-    }, [])
+        
+    }, [categoryId])
+
+    if(loading) {
+        return(
+            <img src="https://cdn.dribbble.com/users/108183/screenshots/14420202/media/0398828bd84d67fad129e64e8a79f77c.gif" className="loadImg" alt="cargando"/> 
+        )
+    }
 
 
-    const handleOnAdd = (quantify) =>{
-        console.log("Haz agregado " + quantify + " productos")}
-
-    
     
     return(
         <div className='ContenedorProductos'>
-        <h1>{props.greeting}</h1>
-        <ItemList productos={productos}/>
-        <ItemCount initial={1} stock={10} onAdd={handleOnAdd}/>
+
+            <div className='flex'>  
+                <h1>Revisa nuestra selección de productos!</h1>
+            </div>
+            <ItemList productos={productos}/>
+            
+ 
         </div>
         
       

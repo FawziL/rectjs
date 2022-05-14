@@ -1,45 +1,51 @@
-
 import { useState, useEffect } from 'react'
-import { getProductosById } from '../../stock'
 import ItemDetail from '../ItemDetail/ItemDetail'
-
+import { useParams } from 'react-router-dom'
+import { getDoc, doc } from 'firebase/firestore'
+import { firestoreDb } from '../../services/firebase'
 import './ItemDetailContainer.css'
 
 
 const ItemDetailContainer = () =>{
 
     const [product, setProduct] = useState()
-    const [loading, setLoading] = useState(true)
-
+    const [loading, setLoading] = useState(false)
+    const { productId } = useParams()
 
     useEffect(() => {
-        getProductosById('1').then(item => {
-            setProduct(item)          
-        }).catch(err  => {
-            console.log(err)
-        }).finally(() => {
+        setLoading(true)
+        getDoc(doc(firestoreDb, 'products', productId)).then(response =>{
+            const product = {id: response.id, ...response.data()}
+            setProduct(product)
+        })
+        .finally(() => {
             setLoading(false)
         })
 
-        return (() => {
-            setProduct()
-        })
+    }, [productId])
 
-    }, [])
+    if(loading) {
+        return(
+            <img src="https://cdn.dribbble.com/users/108183/screenshots/14420202/media/0398828bd84d67fad129e64e8a79f77c.gif" className="loadImg" alt="cargando"/> 
+        )
+    }
 
-    
     return(
-        <div className='DetailsProductos'>
-           { 
-            loading ? 
-                <h1>Cargando...</h1> :
-            product ? 
-                <ItemDetail  {...product} /> :
-                <h1>El producto no existe</h1> 
-            }
+
+        <div>
+            <div className='flex'>  
+                <h1>Tenemos gran variedad de productos!</h1>
+            </div>
+            
+                <div className='tamaño'>
+                    <div className='DetailsProductos'>
+                        <ItemDetail  {...product} /> 
+                    </div>
+                </div>
+            
+            
         </div>
         
-      
     )
 }
 export default ItemDetailContainer

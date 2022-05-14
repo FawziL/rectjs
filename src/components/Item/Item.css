@@ -1,18 +1,39 @@
 .cards{
-    margin: 10px;
+    margin: 25px;
     border-style: solid;
     border-radius: 10%;
-    background-color: rgb(0, 101, 135);
+    background-color: rgb(34, 210, 210);
     padding: 5px;
     color: black;
 }
 .imgProduct{
-    width: 250px;
+    width: 200px;
     height: 100px;
-    border-radius: 5%;
+    border-radius: 15px;
+    padding: 4px;
 }
 .buttonProduct{
-    width: 100px;
-    height: 30px;
+    border-width: 1.5px;
     border-radius: 5px;
+    text-decoration: none;
+    border-style: solid;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+
+}
+h3{
+    font-size: 20px;
+    margin: 10px
+
+}
+.precio{
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.margin{
+    margin: 10px;
 }

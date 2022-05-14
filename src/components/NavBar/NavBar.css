@@ -1,17 +1,110 @@
 nav{
     display: flex;
-    background-color: aqua;
+    background-color: transparent;
     width: 100%;
+    justify-content: space-between;
 }
-nav button{
-    width: 90px;
-    height: 40px;
-    margin-left: 80px;
+
+.logo{
+    font-size: 28px;
+    color: white;
+    margin-top: 20px;
+    margin-left: 40px;
+    width: 200px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
+.NavLink{
+    text-decoration: none;
+}
+.navVerde{
     margin-top: 10px;
-    border-radius: 52%;
-}
-h1{
-    margin-left: 60px;
-    font-size: 20px;
+    border-radius: 15px;
+    border-style: solid;
+    background-color: rgb(244, 244, 244);
+    text-decoration: none;
     color: black;
+    padding: 8px;
+    width: 114.5px;
+}
+.navRojo{
+    margin-top: 10px;
+    border-radius: 15px;
+    border-style: solid;
+    background-color: rgb(133, 127, 127);
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+    width: 114.5px;
+}
+.navRojoDos{
+    margin-top: 10px;
+    border-radius: 15px;
+    border-style: solid;
+    background-color: rgb(133, 127, 127);
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+
+}
+.navVerdeDos{
+    margin-top: 10px;
+    border-radius: 15px;
+    border-style: solid;
+    background-color: rgb(244, 244, 244);
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+}
+
+
+
+.componentes-NavBar {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0px;
+  }
+  
+li a{
+    display: block;
+}
+  
+.componentes-NavBar li:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+  
+.menu-vertical {
+    position: absolute;
+    display: none;
+    list-style: none;
+    padding: 10px 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+.componentes-NavBar li:hover .menu-vertical {
+    display: block;
+}
+  
+.menu-vertical a:hover {
+    background-color: rgb(23, 23, 118) ;
+    color: white;
+}
+.menu-vertical li a {
+    display: block;
+    color: white;
+    padding: 15px, 15px, 85px, 20px;
+    text-decoration: none;
+}
+.menu-vertical li {
+    color: white;
+}
+  
+.elements-NavBar {
+    color: white;
+    text-decoration: none;
+}
+.cartWidget{
+  margin-right: 66px;
+  margin-top: 10px;
 }

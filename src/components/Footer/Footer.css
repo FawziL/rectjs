@@ -1,0 +1,20 @@
+footer{
+    background-color: rgb(244, 244, 244);
+    width: 100%;
+    position: absolute;
+    bottom: -10;
+    color: black;
+    height: 157px;
+}
+.footerContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+footer svg{
+    padding: 10px;
+    width: 25px;
+    height: 35px;
+}
+footer p{
+    margin: 10px;
+}

@@ -1,31 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/NavBar/NavBar';
+import Home from './components/Home/Home';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import { CartContextProvider } from './Context/CartContext';
+import Cart from './components/Cart/Cart';
+import Footer from './components/Footer/Footer';
+import Form from './components/Form/Form';
+
 
 function App() {
   
   return (
-    <div className="App">
-      <header className="App-header">
-        <Navbar/>
-        <ItemListContainer greeting={'Hola, este es el espacio para productos'}/>
-        <img src={logo} className="App-logo" alt="logo" />
-        <ItemDetailContainer/>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      
+    <div className="App imagenFondo">
+    <CartContextProvider>
+        <BrowserRouter>
+          <Navbar/>
+            <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/productos' element={<ItemListContainer/>}/>
+              <Route path='/productos/:categoryId' element={<ItemListContainer/>}/>
+              <Route path='/detail/:productId' element={<ItemDetailContainer/>}/>
+              <Route path='/cart' element={<Cart />} />
+              <Route path='/checkout' element={<Form/>}/>
+              <Route path='*' element={<h1>NOT FOUND</h1>}/>
+            </Routes>
+        </BrowserRouter>
+      </CartContextProvider>
+      <Footer/>
     </div>
   );
 }
