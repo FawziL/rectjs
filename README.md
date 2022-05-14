@@ -66,7 +66,7 @@ En el mismo Navbar, encontrarás el componente "CartWidget", el cual, mostrará 
 
 # De esta forma se verá el proyecto
 
-![Alt text]()
+![Alt text](https://github.com/FawziL/rectjs/blob/firebase2/Docs/demostration.gif)
 
 # Funciones "CartContext"
 
