@@ -3,22 +3,32 @@
     border-style: solid;
     border-radius: 5px;
     color: black;
-    background-color: aquamarine;
+    background-color: rgb(136, 244, 244);
     padding: 10px;
+    min-width: 150px;
+
 }
 .botonEliminarProducto{
-    background-color: rgb(220, 78, 78);
+    background-color: white;
     border-radius: 5px;
     height: 25px;
+    margin-top: 12px;
+    
 }
 .botonComprar{
-    background-color: rgb(30, 200, 90);
+    background-color: rgb(173, 235, 51);
     border-radius: 5px;
     text-decoration: none;
     height: 25px;
-    margin: 10px;
+    margin-left: 10px; 
 }
-
+.botonVaciar{
+    background-color: white;
+    border-radius: 5px;
+    height: 25px;
+    margin-top: 12px;
+    margin-right: 10px; 
+}
 
 .titulo{
 font-size: 20px;
@@ -33,7 +43,7 @@ font-weight: 500;
     border-style: solid;
     padding: 10px;
     margin: 15px;
-    background-color: aquamarine;
+    background-color: white;
     width: 500px;
     border-radius: 10px;
 }
@@ -51,4 +61,11 @@ font-weight: 500;
 .montoTotal{
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
+}
+.padreCarrito{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
 }

@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 const Cart = () => {
 
     const { cart, removeItem, clearCart, getTotal } = useContext(CartContext)
-    
     if(cart.length === 0) {
         return (
             <div className='contenedorCompras'>
@@ -25,7 +24,7 @@ const Cart = () => {
                 <h1>Carrito de compras</h1>
             </div>
             
-            <div  className='flex'>
+            <div  className='padreCarrito'>
                 {cart.map(prod => 
                 <div className="productosCarrito" key={prod.id}> <p className='titulo'>{prod.name}</p>
                 <div>Cantidad: {prod.quantity}</div> <div>Precio uni: {prod.price}</div> <div>Subtotal: {prod.quantity * prod.price} </div>
@@ -36,7 +35,7 @@ const Cart = () => {
                 <p className='montoTotal'>El monto total es de: {getTotal()}$</p>
             </div>
             
-            <div className='margin'><button onClick={clearCart} className='botonEliminarProducto'>Vaciar carrito</button>
+            <div className='margin'><button onClick={clearCart} className='botonVaciar'>Vaciar carrito</button>
             <Link to='/checkout'><button  className='botonComprar'>Terminar compra</button></Link>
             </div>
             

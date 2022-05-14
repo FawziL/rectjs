@@ -6,7 +6,10 @@
     height: 40px;
     margin-left: 80px;
     margin-top: 15px;
+    padding-top: 8px;
     border-radius: 10%;
-    background-color: rgb(142, 29, 248);
+    background-color: rgb(180, 244, 52);
     color: black;
+    display: flex;
+    justify-content: center;
 }

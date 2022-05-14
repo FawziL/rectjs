@@ -5,13 +5,9 @@ import CartContext from "../../Context/CartContext"
 import './Form.css'
 
 
-
 const Form = () =>{
 
     const { cart, getTotal} = useContext(CartContext)  
-
-
-
 
 
     const createOrder = () => {
@@ -90,7 +86,7 @@ const Form = () =>{
                         </div>
                         <div className='formInput'>
                             <p>Número telefónico:</p>
-                            <input type='text' id='phone'/>
+                            <input type='number' id='phone'/>
                         </div>
                     </div>
                     

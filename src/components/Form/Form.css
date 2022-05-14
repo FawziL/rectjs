@@ -3,6 +3,7 @@
     width: 400px;
     margin: 10px 250px 10px 540px;
     color: black;
+    border-width: 2px;
 }
 
 
@@ -10,13 +11,14 @@
     display: flex;
     padding: 10px;
     justify-content: center;
-    background-color: rgb(164, 240, 240);
+    background-color: rgb(136, 244, 244);
+    
 
 }
 input{
     margin: 10px;
     border-radius: 15px;
-    background-color: aquamarine;
+    background-color: rgb(213, 238, 230);
     height: 20px;
     margin-top: 15px;
 }

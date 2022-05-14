@@ -1,7 +1,7 @@
 .CardDetail{
     margin: 10px;
     display: flex;
-    background-color: rgb(118, 190, 214);
+    background-color: rgb(83, 152, 152);
     padding: 5px;
     color: black;
     justify-content: space-evenly;
@@ -17,7 +17,8 @@
     font-size: 18px;
     padding: 5px;
     font-family: sans-serif;
-    background-color: rgb(186, 220, 220);
+    background-color: rgb(189, 205, 205);
     border-radius: 5%;
+    margin: 5px;
 
 }

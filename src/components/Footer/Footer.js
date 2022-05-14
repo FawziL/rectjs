@@ -24,7 +24,7 @@ const Footer = () =>{
             </div>
         </div>
    <hr/>
-    <p>Mipaginadeventas © 2021-2021 *  Desarrollado por Lutfallah F</p>
+    <p>Mipaginadeventas © 2021-2022 *  Desarrollado por Lutfallah F</p>
 </footer>
        
     )
