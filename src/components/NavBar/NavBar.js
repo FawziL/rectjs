@@ -23,7 +23,7 @@ const NavBar = () => {
         <nav className="NavBar">
 
            
-            <NavLink to='/' className="NavLink" ><p className="logo">Tutiendaonline</p></NavLink>
+            <NavLink to='/' className="NavLink" ><p className="logo">AutoPartesOnline</p></NavLink>
             
             <ul className="componentes-NavBar">
                 <li id="elements-NavBar">

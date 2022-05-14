@@ -9,12 +9,25 @@ const Form = () =>{
 
     const { cart, getTotal} = useContext(CartContext)  
 
+    
+
 
     const createOrder = () => {
         let nombre = document.getElementById('nombre').value;
         let email = document.getElementById('email').value;
         let phone = document.getElementById('phone').value;
         let confirmacion = document.getElementById('confirmacion');
+
+        function desaparecer(){
+            confirmacion.innerText= ""
+          }
+          
+        
+
+
+
+
+
         const objOrder = {
             items: cart,
             buyer: {
@@ -63,6 +76,7 @@ const Form = () =>{
             }).catch(error => {
                 console.log(error)
             })}
+            setTimeout(desaparecer,3000);
     }
 
 
